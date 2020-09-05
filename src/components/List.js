@@ -8,12 +8,23 @@ const List = (props) => {
     <div>
       <h2>Available public repositories</h2>
       <ul>
-        {repos.map((repo) => {
+        {repos.slice(0, -1).map((repo) => {
           return (
-            <li key={repo.id} className="list">
-              <a href={repo.html_url} className="repo-text">{repo.name} </a>
-              <span className="repo-description">{repo.description}</span>
-            </li>
+            // <li key={repo.id} className="list">
+            //   <a href={repo.html_url} className="repo-text">{repo.name} </a>
+            //   <span className="repo-description">{repo.description}</span>
+            // </li>
+
+            <table>
+              <tr>
+                <th>Event title</th>
+                <th>Event location</th>
+              </tr>
+              <tr>
+                <td>{repo.name}</td>
+                <td>{repo.description}</td>
+              </tr>
+            </table>
           );
         })}
       </ul>
