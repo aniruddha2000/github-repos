@@ -1,9 +1,11 @@
 import React from "react";
 import "styles/List.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 const List = (props) => {
   const { repos } = props;
-  if (!repos || repos.length === 0) return <h2>No repos, sorry.</h2>;
+  if (repos === null) return <h2>No repos, sorry.</h2>;
   return (
     <div>
       <h2>Available public repositories</h2>
@@ -12,7 +14,7 @@ const List = (props) => {
           <tr>
             <th>Name</th>
             <th>Language</th>
-            {/* <th>License</th> */}
+            <th>Forked</th>
           </tr>
           {repos.slice(0, -1).map((repo) => {
             return (
@@ -20,8 +22,10 @@ const List = (props) => {
                 <td>
                   <a href={repo.html_url}>{repo.name}</a>
                 </td>
-                <td>{repo.language}</td>
-                {/* <td>{repo.license.key}</td> */}
+                <td>{repo.language === null ? "*" : repo.language}</td>
+                <td>
+                  <FontAwesomeIcon size="lg" icon={faCheckCircle} />
+                </td>
               </tr>
             );
           })}
