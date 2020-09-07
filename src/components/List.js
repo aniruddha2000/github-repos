@@ -9,10 +9,10 @@ import {
 
 const List = (props) => {
   const { repos } = props;
-  if (repos === null) return <h2>No repos, sorry.</h2>;
+  if (repos === null) return <h2 className="heading">No repos, sorry.</h2>;
   return (
     <div>
-      <h2>Available public repositories</h2>
+      <h2 className="heading">Available public repositories</h2>
       <ul>
         <table>
           <tr>
@@ -24,20 +24,16 @@ const List = (props) => {
             return (
               <tr>
                 <td>
-                  <a href={repo.html_url}>{repo.name}</a>
+                  <a id="repo-name" href={repo.html_url}>{repo.name}</a>
                 </td>
-                {/* <td>{repo.language === null ? "*" : repo.language}</td> */}
-                <td>
+                <td id="language-name">
                   {repo.language === null ? (
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                    />
+                    <FontAwesomeIcon icon={faCircle} />
                   ) : (
                     repo.language
                   )}
                 </td>
                 <td>
-                  {/* <FontAwesomeIcon size="lg" icon={faCheckCircle} /> */}
                   {repo.fork === true ? (
                     <FontAwesomeIcon
                       size="lg"
