@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
   faTimesCircle,
+  faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 const List = (props) => {
@@ -25,13 +26,30 @@ const List = (props) => {
                 <td>
                   <a href={repo.html_url}>{repo.name}</a>
                 </td>
-                <td>{repo.language === null ? "*" : repo.language}</td>
+                {/* <td>{repo.language === null ? "*" : repo.language}</td> */}
+                <td>
+                  {repo.language === null ? (
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                    />
+                  ) : (
+                    repo.language
+                  )}
+                </td>
                 <td>
                   {/* <FontAwesomeIcon size="lg" icon={faCheckCircle} /> */}
                   {repo.fork === true ? (
-                    <FontAwesomeIcon size="lg" color="#0CCE23" icon={faCheckCircle} />
+                    <FontAwesomeIcon
+                      size="lg"
+                      color="#0CCE23"
+                      icon={faCheckCircle}
+                    />
                   ) : (
-                    <FontAwesomeIcon size="lg" color="#D30404" icon={faTimesCircle} />
+                    <FontAwesomeIcon
+                      size="lg"
+                      color="#D30404"
+                      icon={faTimesCircle}
+                    />
                   )}
                 </td>
               </tr>
