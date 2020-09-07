@@ -10,9 +10,10 @@ export class Repos extends Component {
   }
 
   async componentDidMount() {
-    const apiUrl = "https://api.github.com/users/aniruddha2000/repos";
+    const apiUrl = "https://api.github.com/users/aniruddha2000/repos?per_page=100";
     const response = await fetch(apiUrl);
     const repos = await response.json();
+    console.log(repos);
     this.setState({ repos: repos });
   }
   render() {

@@ -12,7 +12,7 @@ const List = (props) => {
   if (repos === null) return <h2 className="heading">No repos, sorry.</h2>;
   return (
     <div>
-      <h2 className="heading">Available public repositories</h2>
+      <h2 className="heading">Available public repositories({repos.length})</h2>
       <ul>
         <table>
           <tr>
