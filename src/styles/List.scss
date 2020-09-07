@@ -1,4 +1,24 @@
 ul {
-  border: 1px solid #525050;
   list-style-type: none;
+  margin-left: 180px;
+  margin-right: 180px;
+  table {
+    width: 100%;
+    margin-left: -15px;
+    td,
+    th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }
+  }
+}
+#repo-name {
+  color: #b34505;
+  text-decoration: none;
+}
+#language-name {
+  color: #1a16e2;
+}
+.heading {
+  color: rgb(46, 124, 124);
 }
