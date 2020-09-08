@@ -9,14 +9,7 @@ export class Repos extends Component {
       repos: null,
     };
   }
-
-  // async componentDidMount() {
-  //   const apiUrl = "https://api.github.com/users/aniruddha2000/repos?per_page=100";
-  //   const response = await fetch(apiUrl);
-  //   const repos = await response.json();
-  //   console.log(repos);
-  //   this.setState({ repos: repos });
-  // }
+  
   componentDidMount() {
     const apiUrl =
       "https://api.github.com/users/aniruddha2000/repos?per_page=100";
