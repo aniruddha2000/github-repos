@@ -1,15 +1,12 @@
-ul {
-  list-style-type: none;
-  margin-left: 180px;
-  margin-right: 180px;
-  table {
-    width: 80%;
-    margin-left: 30px;
-    td,
-    th {
-      border: 1px solid #dddddd;
-      padding: 8px;
-    }
+table {
+  float: none;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  td,
+  th {
+    border: 1px solid #dddddd;
+    padding: 8px;
   }
 }
 #repo-name {
